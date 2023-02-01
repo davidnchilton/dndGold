@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="dndgold.css">
+    <title>DnD Gold Calculator</title>
+
+    <script type = "text/javascript"> 
+    var y = 0; 
+        function othername() {
+            
+   var g = +document.getElementById("userInputG").value;
+   
+    var s = +document.getElementById("userInputS").value;
+    var c = +document.getElementById("userInputC").value;
+
+    //var intG =parseInt(g);
+    //var intS =parseInt(s);
+    //var intC =parseInt(c);
+
+total_gold = (g*100 + s*10 + c);
+//var x = 0;
+//x = x + total_gold;
+y = y + total_gold;
+//alert(y);
+//alert(total_gold);
+var actuallyTotal = ((''+y)[0]+(''+y)[1]+(''+y)[2]);
+
+var totalGold = (''+y)[0];
+document.getElementById("gold").textContent = totalGold;
+var totalSilver = (''+y)[1];
+document.getElementById("silver").textContent = totalSilver;
+var totalCopper = (''+y)[2];
+document.getElementById("copper").textContent = totalCopper;
+
+
+//var contentJS = document.getElementById('')
+//document.getElementById("totalG").textContent = actuallyTotal;
+
+    
+    //window.location.href = "http://www.google.com/search?q=" + input;
+} 
+        </script>  
+
+
+</head>
+<body>
+
+    <!-- <div id="totalG">0</div> -->
+    <div class="goldFlex">
+     <div id="gold">0</div>
+     <div id="silver">0</div>
+     <div id="copper">0</div>
+    </div>
+
+    <pre class="terminal">
+    </pre>
+
+                  <form id="form" onsubmit="return false;">
+                    <input style="position:absolute; top:70%; left:5%; width:40%;" type="text" id="userInputG" />
+                    <input style="position:absolute; top:75%; left:5%; width:40%;" type="text" id="userInputS" />
+                    <input style="position:absolute; top:80%; left:5%; width:40%;" type="text" id="userInputC" />
+                    
+
+                    <input style="position:absolute; top:50%; left:5%; width:40%;" type="submit" onclick="othername();" />
+                </form>
+</body>
+</html>
