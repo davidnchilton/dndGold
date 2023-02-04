@@ -1,15 +1,23 @@
+
+  @import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap');
+
+  body {
+    font-family: 'PT Sans', sans-serif;
+  }
+
+
 .goldFlex {
     display: flex;
-    height: 200px;
+    height: 300px;
     margin-top: 100px;
     margin-left: 50px;
 }
 
 #gold,#silver,#copper {
     flex: 1;
-    justify-content: space-between;
-    
-    margin-right: 30px;
+    justify-content:space-between;
+    margin-left: 100px;
+    margin-right: 100px;
     text-align: center;
     padding: 12px;
     font-size: 40px;
@@ -19,39 +27,117 @@
 
 #gold {
     flex: 1;
-    background-color: gold;
-    box-shadow: 10px 10px 8px #afb945;
+    background: rgb(253,255,202);
+    background: linear-gradient(90deg, rgba(253,255,202,1) 0%, rgba(237,238,16,1) 26%);
+    box-shadow: 10px 10px 8px #afb94546;
    transition: 1s;
+   border: 3px black solid;
+   
 }
 #silver {
-    background-color: silver;
-    box-shadow: 10px 10px 8px #e6deea;
+    background: rgb(255,255,255);
+    background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(192,192,192,1) 26%);
+    box-shadow: 10px 10px 8px #e6deea3d;
    transition: 1s;
+      border: 3px black solid;
+
 }   
 #copper {
-    background-color: brown;
-    box-shadow: 10px 10px 8px #e39861;
+    background: rgb(227,191,155);
+background: linear-gradient(90deg, rgba(227,191,155,1) 0%, rgba(205,127,50,1) 14%);
+    box-shadow: 10px 10px 8px #e3976142;
    transition: 1s;
+   border: 3px black solid;
+
 }
 #gold:hover {
-    font-size: 60px;
-    border-radius: 100px;
+    
+    border-radius: 10px;
     width: 10px;
+    
 }
 #silver:hover {
-    font-size: 60px;
-    border-radius: 100px;
+
+    border-radius: 10px;
     width: 10px;
 }
 #copper:hover {
-    font-size: 60px;
-    border-radius: 100px;
+
+    border-radius: 10px;
     width: 10px;
 }
 
 
 body {
     background-image: url(goblin.jpg);
-    background-size: cover;
+    background-size:cover;
+    background-repeat: no-repeat;
+    background: rgb(114,132,194);
+background: radial-gradient(circle, rgba(114,132,194,1) 0%, rgba(33,33,30,1) 100%);
+
+background-image: repeating-linear-gradient(
+      45deg,
+      hsla(312, 0%, 63%, 0.05) 0px,
+      hsla(312, 0%, 63%, 0.05) 10px,
+      transparent 10px,
+      transparent 100px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      hsla(312, 0%, 63%, 0.05) 0px,
+      hsla(312, 0%, 63%, 0.05) 50px,
+      transparent 50px,
+      transparent 100px
+    ),
+    linear-gradient(90deg, hsl(80, 0%, 20%), hsl(80, 0%, 20%));
+    
     
 }
+
+#submitGold {
+    height: 15%;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.398), 0 6px 20px 0 rgba(0,0,0,0.19);
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    background-color: rgba(213, 201, 95, 0.683);
+    border-radius: 0px;
+    border: 3px black solid;
+
+}
+#submitGold:hover {
+    height: 15%;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.398), 0 6px 20px 0 rgba(0,0,0,0.19);
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    background-color: rgba(213, 201, 95, 0.683);
+    border-radius: 0px;
+    border: 5px black solid;
+}
+
+input[type=text] {
+    box-sizing:border-box;
+    padding:6px;
+    border:0;
+    box-shadow:0 0 15px 4px rgb(171, 206, 15);
+    border-radius: 10px;
+    ;
+    
+    animation-name: textGlow;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes textGlow {
+    0% {
+        box-shadow:0 0 15px 4px rgba(171, 206, 15, 0.219);
+    }
+    30% {
+        box-shadow:0 0 15px 4px rgba(15, 161, 206, 0.199);
+    }
+    68%,
+    72% {
+        box-shadow:0 0 15px 4px rgba(177, 206, 15, 0.226);
+    }
+    100% {
+        box-shadow:0 0 15px 4px rgba(206, 15, 165, 0.205);
+    }
+  }

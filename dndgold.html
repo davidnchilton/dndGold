@@ -7,42 +7,40 @@
     <link rel="stylesheet" href="dndgold.css">
     <title>DnD Gold Calculator</title>
 
-    <script type = "text/javascript"> 
-    var y = 0; 
+    
+    <script type = "text/javascript"> // ------JS start------
+    var total = 0; 
+    function getLength(number) {
+    return number.toString().length;
+}
         function othername() {
             
-   var g = +document.getElementById("userInputG").value;
-   
+    var g = +document.getElementById("userInputG").value;
     var s = +document.getElementById("userInputS").value;
     var c = +document.getElementById("userInputC").value;
 
-    //var intG =parseInt(g);
-    //var intS =parseInt(s);
-    //var intC =parseInt(c);
 
-total_gold = (g*100 + s*10 + c);
-//var x = 0;
-//x = x + total_gold;
-y = y + total_gold;
-//alert(y);
-//alert(total_gold);
-var actuallyTotal = ((''+y)[0]+(''+y)[1]+(''+y)[2]);
+instanceTotal = (g*100 + s*10 + c); //total on last input
+total = total + instanceTotal; // sum of all gold
 
-var totalGold = (''+y)[0];
-document.getElementById("gold").textContent = totalGold;
-var totalSilver = (''+y)[1];
-document.getElementById("silver").textContent = totalSilver;
-var totalCopper = (''+y)[2];
-document.getElementById("copper").textContent = totalCopper;
+
+var calcGoldPosition = getLength(total) - 2;
+var one = String(total).charAt(getLength(total) -2);
+var totalString =total.toString(); 
+const slicedGold = totalString.slice(0, calcGoldPosition);
+
+
+
+document.getElementById("gold").textContent = slicedGold;
+document.getElementById("copper").textContent = totalString.slice(calcGoldPosition+1);
+document.getElementById("silver").textContent = one;
 
 
 //var contentJS = document.getElementById('')
 //document.getElementById("totalG").textContent = actuallyTotal;
-
-    
-    //window.location.href = "http://www.google.com/search?q=" + input;
-} 
-        </script>  
+//window.location.href = "http://www.google.com/search?q=" + input;
+}  
+        //-----js end-----</script>  
 
 
 </head>
@@ -55,16 +53,18 @@ document.getElementById("copper").textContent = totalCopper;
      <div id="copper">0</div>
     </div>
 
+
+
     <pre class="terminal">
     </pre>
 
                   <form id="form" onsubmit="return false;">
-                    <input style="position:absolute; top:70%; left:5%; width:40%;" type="text" id="userInputG" />
-                    <input style="position:absolute; top:75%; left:5%; width:40%;" type="text" id="userInputS" />
-                    <input style="position:absolute; top:80%; left:5%; width:40%;" type="text" id="userInputC" />
+                    <input style="position:absolute; top:70%; left:36.5%; width:30%; height: 4%;" type="text" id="userInputG" placeholder="Enter Gold"/>
+                    <input style="position:absolute; top:75%; left:36.5%; width:30%; height: 4%;" type="text" id="userInputS" placeholder="Enter Silver"/>
+                    <input style="position:absolute; top:80%; left:36.5%; width:30%; height: 4%;" type="text" id="userInputC" placeholder="Enter Copper"/>
                     
 
-                    <input style="position:absolute; top:50%; left:5%; width:40%;" type="submit" onclick="othername();" />
+                    <input style="position:absolute; top:50%; left:38.5%; width:25%;" type="submit" onclick="othername();" id="submitGold"/>
                 </form>
 </body>
 </html>
